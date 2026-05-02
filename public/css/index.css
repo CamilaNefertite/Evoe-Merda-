@@ -1,0 +1,21 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+.heroSection {
+  width: 100%;
+  height: 100vh;
+  background-image: url("/assets/imgs/Desatino Taetro(1).png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+.heroSection > a{
+  color:yellow;
+}

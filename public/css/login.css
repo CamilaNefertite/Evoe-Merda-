@@ -1,0 +1,101 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background-color: #6A0002;
+  /*background-image: url(/assets/imgs/1W8A9786.jpg);
+  background-size: cover;*/
+}
+
+.container {
+    height: 500px;
+}
+.card {
+    display: flex;
+    width: 1200px;
+    height: 120%;
+    margin: 100px auto;
+    background-color: #E0D6CB;
+    border-radius: 30px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.splitLogin,
+.formulario {
+    height: 100%;
+} 
+
+.splitLogin{
+    width: 60%;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 5px;
+}
+
+.splitLogin > h2{
+    text-align: center;
+}
+
+.splitLogin img{
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 30px 0px 0px 30px;
+}
+
+.formulario{
+    width: 40%;
+    border-radius: 0px 20px 20px 0px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
+    gap: 20px;
+    font-size: 20px;
+    padding: 40px;
+
+}
+
+.formulario > h2 {
+    text-align: center;
+}
+
+input {
+  width: 100%;
+  margin-top: 2px;
+  padding: 10px;
+  border: none;
+  border-radius: 11px;
+  outline: none;
+}
+
+.botao{
+  width: 100%;
+  padding: 12px;
+  background: #7f0000;
+  color: white;
+  border: none;
+  border-radius: 11px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: 0.3s;
+}
+.botao:hover {
+  background: #620000; /* vermelho mais escuro */
+}
+.botao:active {
+  transform: scale(0.97);
+}
+
+.formulario a {
+    font-style: italic;
+    text-decoration: none;
+    color: inherit;
+}

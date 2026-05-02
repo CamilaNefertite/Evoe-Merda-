@@ -10,34 +10,21 @@
 
   <script src="./js/sessao.js"></script>
 
-  <link rel="stylesheet" href="./css/estilo.css" />
-  <link rel="icon" href="./assets/icon/favicon2.ico" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link rel="stylesheet" href="/css/navbar.css">
+    <link rel="stylesheet" href="/css/cadastro.css">
+</head>
 </head>
 
 <body onload="listar()">
-  <!--header inicio-->
-  <div class="header">
-    <div class="container">
-      <h1 class="titulo">AquaTech</h1>
-      <ul class="navbar">
-        <li>
-          <a href="index.html">Inicial</a>
-        </li>
-        <li>
-          <a href="simulador.html">Simulador</a>
-        </li>
-        <li>|</li>
-        <li>
-          <a href="login.html">Login</a>
-        </li>
-        <li class="agora">
-          <a href="#">Cadastro</a>
-        </li>
-      </ul>
-    </div>
-  </div>
-  <!--header fim-->
+    <nav class="navbar">
+        <div class="logo">Desatino</div>
+        <ul class="nav-links">
+            <li><a href="#">Início</a></li>
+            <li><a href="#">Sobre</a></li>
+            <li><a href="cadastro.html">Cadastrar</a></li>
+            <li><a href="login.html">Entrar</a></li>
+        </ul>
+    </nav>
 
   <div class="login">
     <div class="alerta_erro">
@@ -47,19 +34,29 @@
     </div>
     <div class="container">
       <div class="card card-cadastro">
-        <h2>Bem-vindo!</h2>
+        <div class="splitCadastro">
+          <img src="/assets/imgs/Cadastra-se.png" alt="">
+        </div>
         <div class="formulario">
           <!--
                          Para inserir mais um campo, copie uma das inputs abaixo.
                          Assim que inserir vá para o script abaixo.
                      -->
           <div class="campo">
-            <span>Código de ativação:</span>
-            <input id="codigo_input" type="text" placeholder="Insira aqui seu código" />
-          </div>
-          <div class="campo">
             <span>Nome:</span>
             <input id="nome_input" type="text" placeholder="Seu nome" />
+          </div>
+          <div class="campo">
+            <span>Data de Nascimento:</span>
+            <input id="dtnasc_input" type="text" placeholder="aaaa/mm/dd" />
+          </div>      
+          <div class="campo">
+            <span>Você é:</span>
+            <select id="perfil_input">
+              <option value="ator">Ator/atriz</option>
+              <option value="espectador">Espectador(a)</option>
+              <option value="curioso">Curioso(a)</option>
+            </select>
           </div>
           <div class="campo">
             <span>E-mail:</span>
@@ -75,23 +72,20 @@
           </div>
           <button class="botao" onclick="cadastrar()">Cadastrar</button>
         </div>
-        <div id="div_aguardar" class="loading-div">
-          <img src="./assets/circle-loading.gif" id="loading-gif" />
-        </div>
 
         <div id="div_erros_login"></div>
       </div>
     </div>
   </div>
 
-  <!--footer inicio-->
+  <!--footer inicio-
   <div class="footer">
     <div class="container">
       <h4>Feito com amor por aluno &hearts; SPTech &copy; 2023</h4>
       <span class="version">v1.0.0</span>
     </div>
   </div>
-  <!--footer fim-->
+  footer fim-->
 </body>
 
 </html>
@@ -99,7 +93,7 @@
 <script>
 
   // Array para armazenar empresas cadastradas para validação de código de ativação 
-  let listaEmpresasCadastradas = [];
+  // let listaEmpresasCadastradas = [];
 
   function cadastrar() {
     // aguardar();
@@ -107,19 +101,20 @@
     //Recupere o valor da nova input pelo nome do id
     // Agora vá para o método fetch logo abaixo
     var nomeVar = nome_input.value;
+    var dtNascVar = dtnasc_input.value;
+    var perfilVar = perfil_input.value;
     var emailVar = email_input.value;
     var senhaVar = senha_input.value;
     var confirmacaoSenhaVar = confirmacao_senha_input.value;
-    var codigoVar = codigo_input.value;
-    var idEmpresaVincular
 
     // Verificando se há algum campo em branco
     if (
       nomeVar == "" ||
+      dtNascVar == "" ||
+      // perfilVar == "" ||
       emailVar == "" ||
       senhaVar == "" ||
-      confirmacaoSenhaVar == "" ||
-      codigoVar == ""
+      confirmacaoSenhaVar == ""
     ) {
       cardErro.style.display = "block";
       mensagem_erro.innerHTML =
@@ -132,7 +127,7 @@
     }
 
     // Verificando se o código de ativação é de alguma empresa cadastrada
-    for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+    /*for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
       if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
         idEmpresaVincular = listaEmpresasCadastradas[i].id
         console.log("Código de ativação válido.");
@@ -142,7 +137,7 @@
         mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
         finalizarAguardar();
       }
-    }
+    }*/
 
     // Enviando o valor da nova input
     fetch("/usuarios/cadastrar", {
@@ -154,9 +149,10 @@
         // crie um atributo que recebe o valor recuperado aqui
         // Agora vá para o arquivo routes/usuario.js
         nomeServer: nomeVar,
+        dtNascServer: dtNascVar,
+        perfilServer: perfilVar,
         emailServer: emailVar,
-        senhaServer: senhaVar,
-        idEmpresaVincularServer: idEmpresaVincular
+        senhaServer: senhaVar
       }),
     })
       .then(function (resposta) {
@@ -187,7 +183,7 @@
   }
 
   // Listando empresas cadastradas 
-  function listar() {
+  /*function listar() {
     fetch("/empresas/listar", {
       method: "GET",
     })
@@ -204,7 +200,7 @@
       .catch(function (resposta) {
         console.log(`#ERRO: ${resposta}`);
       });
-  }
+  }*/
 
   function sumirMensagem() {
     cardErro.style.display = "none";
