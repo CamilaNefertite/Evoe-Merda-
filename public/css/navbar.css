@@ -1,40 +1,45 @@
     .navbar {
         display: flex;
-        justify-content: space-between;
+        flex-direction: column;
+        justify-content: center;
         align-items: center;
-        width: 95%;
-        margin-left: 2.5%;
-        margin-top: 0.3%;
-        border-radius: 40px;
+        width: 100%;
+        border-radius: 0px 0px 60px 60px;
         padding: 20px 40px;
-        background-color: #0d0d0d;
+        background-color: #D9D9D9;
         color: #fff;
     }
 
     .logo {
-        font-size: 1.5rem;
-        font-weight: bold;
-        letter-spacing: 2px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .logo img {
+        width: 270px;
+        height: auto;
+        /*display: block;*/
     }
 
     .nav-links {
         display: flex;
         gap: 30px;
         list-style: none;
+        margin-top: 15px;
     }
 
     .nav-links a {
         text-decoration: none;
-        color: #fff;
+        color: black;
         font-size: 22px;
         transition: 0.3s;
     }
 
     .nav-links a:hover {
-        color: gold; /* vermelho teatral */
+        color: gold;
     }
 
-    /* botão mobile (escondido no desktop) */
+    /* 
     .menu-toggle {
         display: none;
         font-size: 1.8rem;
@@ -43,3 +48,4 @@
         color: #fff;
         cursor: pointer;
     }
+    */

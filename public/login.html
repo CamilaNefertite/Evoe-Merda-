@@ -18,9 +18,13 @@
 
 <body>
     <nav class="navbar">
-        <div class="logo">Desatino</div>
+        <div class="logo">
+          <a href="index.html">
+            <img src="assets/icon/desatino.png" alt="">
+          </a>
+        </div>
         <ul class="nav-links">
-            <li><a href="#">Início</a></li>
+            <li><a href="index.html">Início</a></li>
             <li><a href="#">Sobre</a></li>
             <li><a href="cadastro.html">Cadastrar</a></li>
             <li><a href="login.html">Entrar</a></li>
@@ -116,12 +120,12 @@
                     console.log(JSON.stringify(json));
                     sessionStorage.EMAIL_USUARIO = json.email;
                     sessionStorage.NOME_USUARIO = json.nome;
-                    sessionStorage.ID_USUARIO = json.id;
-                    sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
+                    sessionStorage.ID_USUARIO = json.idUsuario;
+                    //sessionStorage.AQUARIOS = JSON.stringify(json.aquarios)
 
                     setTimeout(function () {
-                        window.location = "index.html";
-                    }, 1000); // apenas para exibir o loading
+                        window.location = "coxia.html";
+                    }, 1000);
 
                 });
 
