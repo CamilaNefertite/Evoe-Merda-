@@ -95,7 +95,7 @@ body{
 
 .graficos > .grafico{
     background-color: #D5D0D0;
-    height: 350px;
+    height: 450px;
     width: 50%;
     border-radius: 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.362);
@@ -106,7 +106,7 @@ body{
 
 .grafico{
     background-color: #D5D0D0;
-    height: 350px;
+    /*height: 900px;*/
     border-radius: 15px;
     box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.362);
     padding: 20px;
@@ -118,5 +118,5 @@ body{
 }
 
 .grafico-grande .grafico{
-    height: 400px;
+    height: 840px;
 }

@@ -25,4 +25,12 @@ router.get("/buscarResultadosQuiz", function(req, res) {
     dashboardController.buscarResultadosQuiz(req, res);
 });
 
+router.get("/buscarResultadosPerfis", function(req, res) {
+    dashboardController.buscarResultadosPerfis(req, res);
+});
+
+router.get("/buscarResulLingPerfil", function(req, res) {
+    dashboardController.buscarResulLingPerfil(req, res);
+});
+
 module.exports = router;

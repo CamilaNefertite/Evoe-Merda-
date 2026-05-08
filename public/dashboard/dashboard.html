@@ -12,8 +12,6 @@
     <link rel="stylesheet" href="../css/dashboard.css" />
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
   </head>
-  <body>
-
 
 <body>
 
@@ -58,6 +56,7 @@
             <section class="graficos">
                 <div class="grafico">
                     <h3>Perfil dos usuários</h3>
+                    <canvas id="graficoPerfil"></canvas>
                 </div>
                 <div class="grafico">
                     <h3>Resultados do Quiz</h3>
@@ -67,7 +66,8 @@
 
             <section class="grafico-grande">
                 <div class="grafico">
-                    <h3>Perfil × Linguagem teatral</h3>
+                    <h3>Linguagem teatral por tipo de perfil</h3>
+                    <canvas id="graficoLingPerfil"></canvas>
                 </div>
             </section>
         </main>
@@ -154,6 +154,41 @@
     // PRA GRAFICOS
     // PRA GRAFICOS    
 
+    buscarResultadosPerfis();
+    function buscarResultadosPerfis() {
+        fetch("/dashboard/buscarResultadosPerfis")
+        .then(function(resposta) {
+            return resposta.json();
+        })
+        .then(function(dados) {
+            console.log(dados);
+            exibirGraficoPerfil(dados);
+        })
+    }
+
+    function exibirGraficoPerfil(dados) {
+        let labels = [];
+        let valores = [];
+
+        for(let i = 0; i < dados.length; i++) {
+            labels.push(dados[i].perfil);
+            valores.push(dados[i].total);
+        }
+        new Chart(document.getElementById("graficoPerfil"), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Resultados do Quiz',
+                    data: valores,
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+    
+
     buscarResultadosQuiz();
     function buscarResultadosQuiz() {
         fetch("/dashboard/buscarResultadosQuiz")
@@ -162,11 +197,11 @@
         })
         .then(function(dados) {
             //console.log(dados);
-            plotarGrafico(dados);
+            exibirGraficoQuiz(dados);
         })
     }
 
-    function plotarGrafico(dados) {
+    function exibirGraficoQuiz(dados) {
         let labels = [];
         let valores = [];
 
@@ -186,6 +221,115 @@
             }
         });
     }
+
+
+
+
+    buscarResulLingPerfil();
+    function buscarResulLingPerfil() {
+        fetch("/dashboard/buscarResulLingPerfil")
+        .then(function(resposta) {
+            return resposta.json();
+        })
+        .then(function(dados) {
+            console.log(dados);
+            exibirGraficoLingPerfil(dados);
+        })
+    }
+/*
+    function exibirGraficoLingPerfil(dados) {
+        let labels = [];
+        let valores = [];
+
+        for(let i = 0; i < dados.length; i++) {
+            labels.push(dados[i].resultado);
+            valores.push(dados[i].total);
+        }
+        new Chart(document.getElementById("graficoLingPerfil"), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Resultados do Quiz',
+                    data: valores,
+                    borderWidth: 1
+                }]
+            }
+        });
+    }*/
+
+
+
+    function exibirGraficoLingPerfil(dados) {
+
+    let labels = [
+        "experimental",
+        "musical",
+        "classico",
+        "contemporaneo",
+        "comico"
+    ];
+    let atores = [0,0,0,0,0];
+    let curiosos = [0,0,0,0,0];
+    let espectadores = [0,0,0,0,0];
+
+    for(let i = 0; i < dados.length; i++) {
+
+        let perfil = dados[i].perfil;
+        let resultado = dados[i].resultado;
+        let total = dados[i].qtd;
+
+        let indice = labels.indexOf(resultado);
+
+        if(perfil == "ator") {
+            atores[indice] = total;
+        }
+
+        else if(perfil == "curioso") {
+            curiosos[indice] = total;
+        }
+
+        else if(perfil == "espectador") {
+            espectadores[indice] = total;
+        }
+
+    }
+
+    new Chart(document.getElementById("graficoLingPerfil"), {
+
+        type: 'bar',
+
+        data: {
+
+            labels: labels,
+
+            datasets: [
+
+                {
+                    label: 'Atores',
+                    data: atores
+                },
+
+                {
+                    label: 'Curiosos',
+                    data: curiosos
+                },
+
+                {
+                    label: 'Espectadores',
+                    data: espectadores
+                }
+
+            ]
+
+        }
+
+    });
+
+}
+
+
+
 
 
     </script>

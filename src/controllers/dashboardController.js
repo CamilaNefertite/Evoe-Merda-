@@ -38,12 +38,19 @@ function buscarResultadosQuiz(req, res) {
     })
 }
 
+function buscarResultadosPerfis(req, res) {
+    dashboardModel.buscarResultadosPerfis()
+    .then(function(resultado) {
+        res.json(resultado);
+    })
+}
 
-
-
-
-
-
+function buscarResulLingPerfil(req, res) {
+    dashboardModel.buscarResulLingPerfil()
+    .then(function(resultado) {
+        res.json(resultado);
+    })
+}
 
 module.exports = {
     // PRA KPIS
@@ -53,6 +60,8 @@ module.exports = {
     buscarLingTeatralDominante,
 
     // PRA GRAFICOS
-    buscarResultadosQuiz
+    buscarResultadosQuiz,
+    buscarResultadosPerfis,
+    buscarResulLingPerfil
 }
 

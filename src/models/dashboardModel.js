@@ -36,8 +36,25 @@ function buscarQtdQuizzesFeitos() {
 function buscarResultadosQuiz() {
     var instrucaoSql = `
         SELECT resultado, COUNT(*) AS total
-        FROM resultadoQuiz
-        GROUP BY resultado;`;
+            FROM resultadoQuiz
+            GROUP BY resultado;`;
+    return database.executar(instrucaoSql);
+}
+
+function buscarResultadosPerfis() {
+    var instrucaoSql = `
+        SELECT perfil, COUNT(*) AS total
+            FROM usuario
+            GROUP BY perfil;`;
+    return database.executar(instrucaoSql);
+}
+
+function buscarResulLingPerfil() {
+    var instrucaoSql = `
+        SELECT usuario.perfil, resultadoQuiz.resultado, COUNT(*) as qtd FROM usuario
+            JOIN resultadoQuiz ON fkUsuario = idUsuario
+            GROUP BY perfil, resultado
+            ORDER BY perfil, qtd DESC;`;
     return database.executar(instrucaoSql);
 }
 
@@ -49,6 +66,7 @@ module.exports = {
     buscarLingTeatralDominante,
 
     // PRA GRAFICOS
-    buscarResultadosQuiz
-
+    buscarResultadosQuiz,
+    buscarResultadosPerfis,
+    buscarResulLingPerfil
 }
