@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Dashboard</title>
+
+    <script src="../js/sessao.js"></script>
+    <link rel="icon" href="../assets/icon/iconPrincipal.png">
+    <link rel="stylesheet" href="../css/dashboard.css" />
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  </head>
+  <body>
+
+
+<body>
+
+    <div class="dashboard">
+          <aside class="sidebar">
+            <h1 class="logo">DESATINO</h1>
+            <nav>
+                <a href="#">Dashboard</a>
+                <a href="#">Coxia</a>
+                <a href="#">Quiz Cênico</a>
+                <a href="#">Mapa Cênico</a>
+                <a href="#">Arquivo Vivo</a>
+            </nav>
+        </aside>
+
+        <main class="conteudo">
+          <!--
+          <section class="saudacoes">
+
+          </section> 
+          -->
+
+            <section class="kpis">
+                <div class="card">
+                    <h3>Total de usuários</h3>
+                    <p id="kpiTotalUsuarios"></p>
+                </div>
+                <div class="card">
+                    <h3>Linguagem teatral dominante</h3>
+                    <p id="kpiLingTeatralDominante"></p>
+                </div>
+                <div class="card">
+                    <h3>Tipo de perfil predominante</h3>
+                    <p id="kpiBuscarTipoPerfilDominante"></p>
+                </div>
+                <div class="card">
+                    <h3>Total de quizzes respondidos</h3>
+                    <p id="kpiTotalQuizzes"></p>
+                </div>
+            </section>
+
+            <section class="graficos">
+                <div class="grafico">
+                    <h3>Perfil dos usuários</h3>
+                </div>
+                <div class="grafico">
+                    <h3>Resultados do Quiz</h3>
+                    <canvas id="graficoQuiz"></canvas>
+                </div>
+            </section>
+
+            <section class="grafico-grande">
+                <div class="grafico">
+                    <h3>Perfil × Linguagem teatral</h3>
+                </div>
+            </section>
+        </main>
+    </div>
+</body>
+</html>
+    <script>
+      /*/ sessao ppra pegar a hora e dar a mensagem correspondente
+      const agora = new Date();
+      const hora = agora.getHours();
+
+      let msg = ``;
+      if (hora < 12) {
+        msg = `Bom dia! ☀️`;
+      } else if (hora < 18) {
+        msg = `Boa tarde! 🌥️`;
+      } else {
+        msg = `Boa noite! 🌙`;
+      }
+      saudacoes.innerHTML = `<h1>${msg}</h1>`;
+      // fim da sessao de pegar a hora*/
+
+
+    // PRA KPIS
+    // PRA KPIS
+    // PRA KPIS
+    // PRA KPIS
+    // PRA KPIS
+
+    buscarUsuarios();
+    function buscarUsuarios() {
+        fetch("/dashboard/buscarUsuarios")
+        .then(function(resposta) {
+            return resposta.json();
+        })
+        .then(function(dados) {
+            //console.log(dados);
+            document.getElementById("kpiTotalUsuarios").innerHTML = dados[0].total;
+        })
+    }
+
+
+    buscarLingTeatralDominante();
+    function buscarLingTeatralDominante() {
+        fetch("/dashboard/buscarLingTeatralDominante")
+        .then(function(resposta) {
+            return resposta.json();
+        })
+        .then(function(dados) {
+            //console.log(dados);
+            document.getElementById("kpiLingTeatralDominante").innerHTML = dados[0].resultado;
+        })
+    }
+
+
+    buscarTipoPerfilDominante();
+    function buscarTipoPerfilDominante() {
+        fetch("/dashboard/buscarTipoPerfilDominante")
+        .then(function(resposta) {
+            return resposta.json();
+        })
+        .then(function(dados) {
+            //console.log(dados);
+            document.getElementById("kpiBuscarTipoPerfilDominante").innerHTML = dados[0].perfilPredominante;
+        })
+    }
+
+
+    buscarQtdQuizzesFeitos();
+    function buscarQtdQuizzesFeitos() {
+        fetch("/dashboard/buscarQtdQuizzesFeitos")
+        .then(function(resposta) {
+            return resposta.json();
+        })
+        .then(function(dados) {
+            //console.log(dados);
+            document.getElementById("kpiTotalQuizzes").innerHTML = dados[0].qtdQuizzesFeitos;
+        })
+    }
+
+    // PRA GRAFICOS
+    // PRA GRAFICOS
+    // PRA GRAFICOS
+    // PRA GRAFICOS
+    // PRA GRAFICOS    
+
+    buscarResultadosQuiz();
+    function buscarResultadosQuiz() {
+        fetch("/dashboard/buscarResultadosQuiz")
+        .then(function(resposta) {
+            return resposta.json();
+        })
+        .then(function(dados) {
+            //console.log(dados);
+            plotarGrafico(dados);
+        })
+    }
+
+    function plotarGrafico(dados) {
+        let labels = [];
+        let valores = [];
+
+        for(let i = 0; i < dados.length; i++) {
+            labels.push(dados[i].resultado);
+            valores.push(dados[i].total);
+        }
+        new Chart(document.getElementById("graficoQuiz"), {
+            type: 'bar',
+            data: {
+                labels: labels,
+                datasets: [{
+                    label: 'Resultados do Quiz',
+                    data: valores,
+                    borderWidth: 1
+                }]
+            }
+        });
+    }
+
+
+    </script>
+  </body>
+</html>
