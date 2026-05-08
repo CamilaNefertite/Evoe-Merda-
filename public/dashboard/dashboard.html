@@ -236,97 +236,54 @@
             exibirGraficoLingPerfil(dados);
         })
     }
-/*
+
     function exibirGraficoLingPerfil(dados) {
-        let labels = [];
-        let valores = [];
+        let labels = [
+            'experimental',
+            'musical',
+            'classico',
+            'contemporaneo',
+            'comico'];
+        let atores = [0,0,0,0,0];
+        let curiosos = [0,0,0,0,0];
+        let espectadores = [0,0,0,0,0];
 
         for(let i = 0; i < dados.length; i++) {
-            labels.push(dados[i].resultado);
-            valores.push(dados[i].total);
+            let perfil = dados[i].perfil;
+            let resultado = dados[i].resultado;
+            let total = dados[i].qtd;
+            let indice = labels.indexOf(resultado);
+            
+            if(perfil == "ator") {
+                atores[indice] = total;
+            } else if(perfil == "curioso") {
+                curiosos[indice] = total;
+            } else if(perfil == "espectador") {
+                espectadores[indice] = total;
+            }
         }
+
         new Chart(document.getElementById("graficoLingPerfil"), {
             type: 'bar',
             data: {
                 labels: labels,
-                datasets: [{
-                    label: 'Resultados do Quiz',
-                    data: valores,
-                    borderWidth: 1
-                }]
+                datasets: [
+                    {
+                        label: 'Atores',
+                        data: atores
+                    },
+                    {
+                        label: 'Curiosos',
+                        data: curiosos
+                    },
+                    {
+                        label: 'Espectadores',
+                        data: espectadores
+                    }
+                ]
             }
         });
-    }*/
-
-
-
-    function exibirGraficoLingPerfil(dados) {
-
-    let labels = [
-        "experimental",
-        "musical",
-        "classico",
-        "contemporaneo",
-        "comico"
-    ];
-    let atores = [0,0,0,0,0];
-    let curiosos = [0,0,0,0,0];
-    let espectadores = [0,0,0,0,0];
-
-    for(let i = 0; i < dados.length; i++) {
-
-        let perfil = dados[i].perfil;
-        let resultado = dados[i].resultado;
-        let total = dados[i].qtd;
-
-        let indice = labels.indexOf(resultado);
-
-        if(perfil == "ator") {
-            atores[indice] = total;
-        }
-
-        else if(perfil == "curioso") {
-            curiosos[indice] = total;
-        }
-
-        else if(perfil == "espectador") {
-            espectadores[indice] = total;
-        }
-
     }
-
-    new Chart(document.getElementById("graficoLingPerfil"), {
-
-        type: 'bar',
-
-        data: {
-
-            labels: labels,
-
-            datasets: [
-
-                {
-                    label: 'Atores',
-                    data: atores
-                },
-
-                {
-                    label: 'Curiosos',
-                    data: curiosos
-                },
-
-                {
-                    label: 'Espectadores',
-                    data: espectadores
-                }
-
-            ]
-
-        }
-
-    });
-
-}
 
 
 
