@@ -52,6 +52,60 @@ function buscarResulLingPerfil(req, res) {
     })
 }
 
+// PRO ARTIGO
+function cadastrarArtigos(req, res) {
+    // Crie uma variável que vá recuperar os valores do arquivo cadastro.html
+    var titulo = req.body.tituloServer;
+    var conteudo = req.body.conteudoServer;
+    var categoria = req.body.categoriaServer;
+
+    // Faça as validações dos valores
+    if (titulo == undefined) {
+        res.status(400).send("Seu titulo está undefined!");
+    } else if (conteudo == undefined) {
+        res.status(400).send("Seu conteudo está undefined!");
+    } else if (categoria == undefined) {
+        res.status(400).send("Sua categoria está undefined!");
+    } else {
+
+        // Passe os valores como parâmetro e vá para o arquivo usuarioModel.js
+        dashboardModel.cadastrarArtigos(titulo, conteudo, categoria)
+            .then(
+                function (resultado) {
+                    res.json(resultado);
+                }
+            ).catch(
+                function (erro) {
+                    console.log(erro);
+                    console.log(
+                        "\nHouve um erro ao realizar o cadastro! Erro: ",
+                        erro.sqlMessage
+                    );
+                    res.status(500).json(erro.sqlMessage);
+                }
+            );
+    }
+}
+
+function buscarArtigos(req, res) {
+    dashboardModel.buscarArtigos()
+    .then(function(resultado) {
+        res.json(resultado);
+    })
+}
+
+function buscarArtigoPorId(req,res){
+
+    var idArtigo = req.params.idArtigo;
+
+    dashboardModel.buscarArtigoPorId(idArtigo)
+    .then(function(resultado){
+        res.json(resultado);
+    });
+}
+
+
+
 module.exports = {
     // PRA KPIS
     buscarUsuarios,
@@ -62,6 +116,10 @@ module.exports = {
     // PRA GRAFICOS
     buscarResultadosQuiz,
     buscarResultadosPerfis,
-    buscarResulLingPerfil
+    buscarResulLingPerfil,
+
+    cadastrarArtigos,
+    buscarArtigos,
+    buscarArtigoPorId
 }
 

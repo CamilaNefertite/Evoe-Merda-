@@ -1,345 +1,989 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quiz, Desatino</title>
+    <title>Desatino, Quiz</title>
+    <link rel="icon" href="./assets/icon/iconPrincipal.png">
+    <link rel="stylesheet" href="/css/quiz.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
 </head>
 <body>
-    
-    <form>
+    <nav class="navbar">
+        <div class="logo">
+          <a href="coxia.html">
+            <img src="assets/icon/desatino.png" alt="">
+          </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#">Recomendações de peças</a></li>
+            <li><a href="paginaInicialArtigos.html">Artigos</a></li>
+        </ul>
+    </nav>
+
+    <br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+    <div id="pergunta1" class="pergunta">
         <p>Qual dessas apresentações parece mais interessante?</p>
-        <input type="radio" id="opt1_per1" name="pergunta1" value="experimental">
-        <label for="opt1_per1">Uma peça diferente e fora do padrão</label><br>
 
-        <input type="radio" id="opt2_per1" name="pergunta1" value="comico">
-        <label for="opt2_per1">Uma apresentação divertida e interativa</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per1" name="pergunta1" value="experimental">
+            <label for="opt1_per1">Uma peça diferente e fora do padrão</label><br>
+        </div>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per1" name="pergunta1" value="comico">
+            <label for="opt2_per1">Uma apresentação divertida e interativa</label><br>
+        </div>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per1" name="pergunta1" value="musical">
+            <label for="opt3_per1">Um grande musical cheio de música e dança</label><br>
+        </div>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per1" name="pergunta1" value="classico">
+            <label for="opt4_per1">Uma peça clássica em um teatro histórico</label><br>
+        </div>
+        <div class="alternativas">
+            <input type="radio" id="opt5_per1" name="pergunta1" value="contemporaneo">
+            <label for="opt5_per1">Uma peça moderna sobre temas atuais</label><br>
+        </div>
+        <button onclick="proximaPergunta()" class="botaoProxima">Próxima</button>
+    </div>
 
-        <input type="radio" id="opt3_per1" name="pergunta1" value="musical">
-        <label for="opt3_per1">Um grande musical cheio de música e dança</label><br>
-
-        <input type="radio" id="opt4_per1" name="pergunta1" value="classico">
-        <label for="opt4_per1">Uma peça clássica em um teatro histórico</label><br>
-
-        <input type="radio" id="opt5_per1" name="pergunta1" value="contemporaneo">
-        <label for="opt5_per1">Uma peça moderna sobre temas atuais</label><br>
 
 
-
+    <div id="pergunta2" class="pergunta">
         <p>O que mais chama sua atenção em uma peça?</p>
-        <input type="radio" id="opt1_per2" name="pergunta2" value="comico">
-        <label for="opt1_per2">Humor e diversão</label><br>
 
-        <input type="radio" id="opt2_per2" name="pergunta2" value="classico">
-        <label for="opt2_per2">Conversas e histórias bem construídas</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per2" name="pergunta2" value="comico">
+            <label for="opt1_per2">Humor e diversão</label><br>
+        </div>
 
-        <input type="radio" id="opt3_per2" name="pergunta2" value="contemporaneo">
-        <label for="opt3_per2">Temas atuais e reflexivos</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per2" name="pergunta2" value="classico">
+            <label for="opt2_per2">Conversas e histórias bem construídas</label><br>
+        </div>
 
-        <input type="radio" id="opt4_per2" name="pergunta2" value="experimental">
-        <label for="opt4_per2">Coisas diferentes e inesperadas</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per2" name="pergunta2" value="contemporaneo">
+            <label for="opt3_per2">Temas atuais e reflexivos</label><br>
+        </div>
 
-        <input type="radio" id="opt5_per2" name="pergunta2" value="musical">
-        <label for="opt5_per2">Emoção forte e cenas grandiosas</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per2" name="pergunta2" value="experimental">
+            <label for="opt4_per2">Coisas diferentes e inesperadas</label><br>
+        </div>
+
+        <div class="alternativas">
+            <input type="radio" id="opt5_per2" name="pergunta2" value="musical">
+            <label for="opt5_per2">Emoção forte e cenas grandiosas</label><br>
+        </div>
+
+        <button onclick="proximaPergunta()" class="botaoProxima">Próxima</button>
+    </div>
 
 
-
+    <div id="pergunta3" class="pergunta">
         <p>Qual palavra mais combina com você?</p>
-        <input type="radio" id="opt1_per3" name="pergunta3" value="classico">
-        <label for="opt1_per3">Elegância</label><br>
 
-        <input type="radio" id="opt2_per3" name="pergunta3" value="experimental">
-        <label for="opt2_per3">Liberdade</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per3" name="pergunta3" value="classico">
+            <label for="opt1_per3">Elegância</label><br>
+        </div>
 
-        <input type="radio" id="opt3_per3" name="pergunta3" value="musical">
-        <label for="opt3_per3">Intensidade</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per3" name="pergunta3" value="experimental">
+            <label for="opt2_per3">Liberdade</label><br>
+        </div>
 
-        <input type="radio" id="opt4_per3" name="pergunta3" value="comico">
-        <label for="opt4_per3">Diversão</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per3" name="pergunta3" value="musical">
+            <label for="opt3_per3">Intensidade</label><br>
+        </div>
 
-        <input type="radio" id="opt5_per3" name="pergunta3" value="contemporaneo">
-        <label for="opt5_per3">Reflexão</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per3" name="pergunta3" value="comico">
+            <label for="opt4_per3">Diversão</label><br>
+        </div>
 
+        <div class="alternativas">
+            <input type="radio" id="opt5_per3" name="pergunta3" value="contemporaneo">
+            <label for="opt5_per3">Reflexão</label><br>
+        </div>
 
+        <button onclick="proximaPergunta()" class="botaoProxima">Próxima</button>
+    </div>
 
+    <div id="pergunta4" class="pergunta">
         <p>Depois de assistir uma peça, você prefere sair…</p>
-        <input type="radio" id="opt1_per4" name="pergunta4" value="contemporaneo">
-        <label for="opt1_per4">Refletindo sobre a vida ou sociedade</label><br>
 
-        <input type="radio" id="opt2_per4" name="pergunta4" value="musical">
-        <label for="opt2_per4">Emocionado e empolgado</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per4" name="pergunta4" value="contemporaneo">
+            <label for="opt1_per4">Refletindo sobre a vida ou sociedade</label><br>
+        </div>
 
-        <input type="radio" id="opt3_per4" name="pergunta4" value="experimental">
-        <label for="opt3_per4">Tentando entender tudo que viu</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per4" name="pergunta4" value="musical">
+            <label for="opt2_per4">Emocionado e empolgado</label><br>
+        </div>
 
-        <input type="radio" id="opt4_per4" name="pergunta4" value="comico">
-        <label for="opt4_per4">Rindo e lembrando das cenas engraçadas</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per4" name="pergunta4" value="experimental">
+            <label for="opt3_per4">Tentando entender tudo que viu</label><br>
+        </div>
 
-        <input type="radio" id="opt5_per4" name="pergunta4" value="classico">
-        <label for="opt5_per4">Pensando nos personagens e na história</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per4" name="pergunta4" value="comico">
+            <label for="opt4_per4">Rindo e lembrando das cenas engraçadas</label><br>
+        </div>
+
+        <div class="alternativas">
+            <input type="radio" id="opt5_per4" name="pergunta4" value="classico">
+            <label for="opt5_per4">Pensando nos personagens e na história</label><br>
+        </div>
+
+        <button onclick="proximaPergunta()" class="botaoProxima">Próxima</button>
+    </div>
 
 
-
+    <div id="pergunta5" class="pergunta">
         <p>O que mais importa em uma peça pra você?</p>
-        <input type="radio" id="opt1_per5" name="pergunta5" value="classico">
-        <label for="opt1_per5">A história e os diálogos</label><br>
 
-        <input type="radio" id="opt2_per5" name="pergunta5" value="musical">
-        <label for="opt2_per5">Música e emoção</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per5" name="pergunta5" value="classico">
+            <label for="opt1_per5">A história e os diálogos</label><br>
+        </div>
 
-        <input type="radio" id="opt3_per5" name="pergunta5" value="comico">
-        <label for="opt3_per5">Fazer o público rir e se divertir</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per5" name="pergunta5" value="musical">
+            <label for="opt2_per5">Música e emoção</label><br>
+        </div>
 
-        <input type="radio" id="opt4_per5" name="pergunta5" value="experimental">
-        <label for="opt4_per5">Criatividade e surpresa</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per5" name="pergunta5" value="comico">
+            <label for="opt3_per5">Fazer o público rir e se divertir</label><br>
+        </div>
 
-        <input type="radio" id="opt5_per5" name="pergunta5" value="contemporaneo">
-        <label for="opt5_per5">A mensagem que ela passa</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per5" name="pergunta5" value="experimental">
+            <label for="opt4_per5">Criatividade e surpresa</label><br>
+        </div>
+
+        <div class="alternativas">
+            <input type="radio" id="opt5_per5" name="pergunta5" value="contemporaneo">
+            <label for="opt5_per5">A mensagem que ela passa</label><br>
+        </div>
+
+        <button onclick="proximaPergunta()" class="botaoProxima">Próxima</button>
+    </div>
 
 
-
+    <div id="pergunta6" class="pergunta">
         <p>Qual tipo de ambiente você acha mais interessante?</p>
-        <input type="radio" id="opt1_per6" name="pergunta6" value="experimental">
-        <label for="opt1_per6">Algo estranho e fora do comum</label><br>
 
-        <input type="radio" id="opt2_per6" name="pergunta6" value="musical">
-        <label for="opt2_per6">Luzes, música e espetáculo</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per6" name="pergunta6" value="experimental">
+            <label for="opt1_per6">Algo estranho e fora do comum</label><br>
+        </div>
 
-        <input type="radio" id="opt3_per6" name="pergunta6" value="classico">
-        <label for="opt3_per6">Um teatro elegante e tradicional</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per6" name="pergunta6" value="musical">
+            <label for="opt2_per6">Luzes, música e espetáculo</label><br>
+        </div>
 
-        <input type="radio" id="opt4_per6" name="pergunta6" value="contemporaneo">
-        <label for="opt4_per6">Um lugar moderno e alternativo</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per6" name="pergunta6" value="classico">
+            <label for="opt3_per6">Um teatro elegante e tradicional</label><br>
+        </div>
 
-        <input type="radio" id="opt5_per6" name="pergunta6" value="comico">
-        <label for="opt5_per6">Um ambiente leve e divertido</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per6" name="pergunta6" value="contemporaneo">
+            <label for="opt4_per6">Um lugar moderno e alternativo</label><br>
+        </div>
+
+        <div class="alternativas">
+            <input type="radio" id="opt5_per6" name="pergunta6" value="comico">
+            <label for="opt5_per6">Um ambiente leve e divertido</label><br>
+        </div>
+
+        <button onclick="proximaPergunta()" class="botaoProxima">Próxima</button>
+    </div>
 
 
-
+    <div id="pergunta7" class="pergunta">
         <p>O que você gostaria de sentir assistindo uma peça?</p>
-        <input type="radio" id="opt1_per7" name="pergunta7" value="comico">
-        <label for="opt1_per7">Alegria</label><br>
 
-        <input type="radio" id="opt2_per7" name="pergunta7" value="experimental">
-        <label for="opt2_per7">Surpresa</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per7" name="pergunta7" value="comico">
+            <label for="opt1_per7">Alegria</label><br>
+        </div>
 
-        <input type="radio" id="opt3_per7" name="pergunta7" value="classico">
-        <label for="opt3_per7">Admiração pela atuação</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per7" name="pergunta7" value="experimental">
+            <label for="opt2_per7">Surpresa</label><br>
+        </div>
 
-        <input type="radio" id="opt4_per7" name="pergunta7" value="musical">
-        <label for="opt4_per7">Encantamento</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per7" name="pergunta7" value="classico">
+            <label for="opt3_per7">Admiração pela atuação</label><br>
+        </div>
 
-        <input type="radio" id="opt5_per7" name="pergunta7" value="contemporaneo">
-        <label for="opt5_per7">Identificação com a história</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per7" name="pergunta7" value="musical">
+            <label for="opt4_per7">Encantamento</label><br>
+        </div>
+
+        <div class="alternativas">
+            <input type="radio" id="opt5_per7" name="pergunta7" value="contemporaneo">
+            <label for="opt5_per7">Identificação com a história</label><br>
+        </div>
+
+        <button onclick="proximaPergunta()" class="botaoProxima">Próxima</button>
+    </div>
 
 
-
+    <div id="pergunta8" class="pergunta">
         <p>Qual dessas experiências você escolheria?</p>
-        <input type="radio" id="opt1_per8" name="pergunta8" value="contemporaneo">
-        <label for="opt1_per8">Assistir uma peça sobre assuntos atuais</label><br>
 
-        <input type="radio" id="opt2_per8" name="pergunta8" value="classico">
-        <label for="opt2_per8">Ver uma peça clássica muito conhecida</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per8" name="pergunta8" value="contemporaneo">
+            <label for="opt1_per8">Assistir uma peça sobre assuntos atuais</label><br>
+        </div>
 
-        <input type="radio" id="opt3_per8" name="pergunta8" value="comico">
-        <label for="opt3_per8">Ver uma peça de humor ou improviso</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per8" name="pergunta8" value="classico">
+            <label for="opt2_per8">Ver uma peça clássica muito conhecida</label><br>
+        </div>
 
-        <input type="radio" id="opt4_per8" name="pergunta8" value="musical">
-        <label for="opt4_per8">Assistir um musical famoso</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per8" name="pergunta8" value="comico">
+            <label for="opt3_per8">Ver uma peça de humor ou improviso</label><br>
+        </div>
 
-        <input type="radio" id="opt5_per8" name="pergunta8" value="experimental">
-        <label for="opt5_per8">Ir em uma peça experimental e diferente</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per8" name="pergunta8" value="musical">
+            <label for="opt4_per8">Assistir um musical famoso</label><br>
+        </div>
 
+        <div class="alternativas">
+            <input type="radio" id="opt5_per8" name="pergunta8" value="experimental">
+            <label for="opt5_per8">Ir em uma peça experimental e diferente</label><br>
+        </div>
 
+        <button onclick="proximaPergunta()" class="botaoProxima">Próxima</button>
+    </div>
 
+    <div id="pergunta9" class="pergunta">
         <p>Se você pudesse entrar em um palco agora, qual escolheria?</p>
-        <input type="radio" id="opt1_per9" name="pergunta9" value="comico2">
-        <label for="opt1_per9">Um palco cheio de interação e risadas</label><br>
 
-        <input type="radio" id="opt2_per9" name="pergunta9" value="experimental2">
-        <label for="opt2_per9">Um espaço artístico sem regras</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt1_per9" name="pergunta9" value="comico2">
+            <label for="opt1_per9">Um palco cheio de interação e risadas</label><br>
+        </div>
 
-        <input type="radio" id="opt3_per9" name="pergunta9" value="classico2">
-        <label for="opt3_per9">Um teatro tradicional e histórico</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt2_per9" name="pergunta9" value="experimental2">
+            <label for="opt2_per9">Um espaço artístico sem regras</label><br>
+        </div>
 
-        <input type="radio" id="opt4_per9" name="pergunta9" value="musical2">
-        <label for="opt4_per9">Um palco cheio de luzes e música</label><br>
+        <div class="alternativas">
+            <input type="radio" id="opt3_per9" name="pergunta9" value="classico2">
+            <label for="opt3_per9">Um teatro tradicional e histórico</label><br>
+        </div>
 
-        <input type="radio" id="opt5_per9" name="pergunta9" value="contemporaneo2">
-        <label for="opt5_per9">Uma apresentação moderna e alternativa</label><br>
-    </form>
-    <button onclick="cadastrarResultado()">Ir Ao Resultado!</button>
+        <div class="alternativas">
+            <input type="radio" id="opt4_per9" name="pergunta9" value="musical2">
+            <label for="opt4_per9">Um palco cheio de luzes e música</label><br>
+        </div>
+
+        <div class="alternativas">
+            <input type="radio" id="opt5_per9" name="pergunta9" value="contemporaneo2">
+            <label for="opt5_per9">Uma apresentação moderna e alternativa</label><br>
+        </div>
+
+        <button onclick="cadastrarResultado()" class="botaoProxima">Ir Ao Resultado!</button>      
+    </div>
+
+        <div id="resultadoQuiz" class="pergunta">
+            <p id="tituloResultado"></p>
+            <span id="textoResultado"></span>
+        </div>  
+    <br><br>
+
+    <div id="recomendacoesResultadoExperimental">
+        <h1>Peças que talvez conversem com você</h1> <br><br>
+
+        <div class="wraperCardRecomendacoesResultados">
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/7gatinhos.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>7 Gatinhos</span></p>
+                <p class="infoCardRecomendacoesResul">Tragédia ácida de Nelson Rodrigues sobre hipocrisia familiar, desejos reprimidos, moralidade, violência e decadência emocional na classe média brasileira.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Oficina</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>20/06 a 12/07</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/quarto2107.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Quarto 2107</span></p>
+                <p class="infoCardRecomendacoesResul">Suspense psicológico claustrofóbico sobre isolamento, obsessão e identidade, ambientado em um quarto carregado de tensão e mistério constante.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Parlapatões</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>22/05 a 07/06</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/oVenenoDoTeatro.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>O Veneno do Teatro</span></p>
+                <p class="infoCardRecomendacoesResul">Thriller teatral intenso onde manipulação, crueldade e obsessão artística transformam atuação e realidade em experiências perigosamente inseparáveis.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>SP Escola de Teatro</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>23/05 a 07/06</p>
+            </div>
+            
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/rasgaCoracao.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Rasga Coração</span></p>
+                <p class="infoCardRecomendacoesResul">Drama político e familiar que confronta diferentes gerações, ideologias e sonhos, explorando conflitos sociais, juventude, repressão e liberdade.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Oficina</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>29/05 a 08/06</p>
+            </div>            
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>Companhias que valem a pena conhecer mais</h1> <br><br>
+        <h3>Cada companhia desenvolve sua própria linguagem artística, estética e forma de criar teatro. Com base no seu resultado, talvez essas companhias despertem seu interesse.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://satyros.com.br/wp-content/uploads/2025/01/278329525_533851168098399_5883224764712691425_n-1024x1024.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Os Satyros</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia conhecida por montagens provocativas, urbanas, intensas e muito ligadas à Praça Roosevelt. Mistura performance, experimentação e dramaturgia contemporânea.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://portalbelohorizonte.com.br/sites/default/files/arquivos/eventos/2020-04/teatro-oficina.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Teatro Oficina</span></p>
+                <p class="infoCardRecomendacoesResul">Uma das companhias mais importantes do teatro experimental brasileiro, criada por José Celso Martinez Corrêa. Trabalha teatro ritualístico, político e corporal.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="./assets/imgs/imgPecas/logoCemiAutomoveis.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Cemitério do Automóveis</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia fundada por Mário Bortolotto, com estética underground, marginal e existencialista.</p><br>
+            </div>
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>O teatro além do teatro</h1> <br><br>
+        <h3>Cinema, literatura, séries e outras formas de arte também carregam elementos teatrais. Talvez algum desses conteúdos converse com você.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultados">
+                <img src="https://rollingstone.com.br/wp-content/uploads/2025/10/50-anos-de-The-Rocky-Horror-Picture-Show-como-esta-o-elenco-atualmente.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>The Rocky Horror Picture Show</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Filme)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Um musical cult caótico, exagerado e libertador que mistura terror, humor, sexualidade e performances extravagantes. Acompanhamos Brad e Janet entrando em um castelo habitado por figuras bizarras lideradas por Dr. Frank-N-Furter. A obra virou símbolo de liberdade artística, teatralidade, cultura queer e celebração do estranho e do excêntrico.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://www.nme.com/wp-content/uploads/2016/11/twin-peaks.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Twin Peaks</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Série)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Após o assassinato de Laura Palmer, uma pequena cidade revela segredos perturbadores e acontecimentos surreais. Misturando suspense, humor estranho, sonho e horror psicológico, a série cria uma atmosfera profundamente teatral e experimental. A obra explora dualidade humana, mistério e simbolismo, influenciando cinema, televisão e linguagens artísticas contemporâneas.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://images.mubicdn.net/images/film/163802/cache-192547-1745493491/image-w1280.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Cabaret (1993)</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Peça/musical)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Ambientado na Alemanha pré-nazista, acompanha artistas e frequentadores do decadente Kit Kat Club enquanto tensões políticas crescem fora do palco. A obra mistura música, sensualidade, crítica social e melancolia, usando o cabaré como metáfora para escapismo, decadência e transformação social em tempos de crise e repressão.
+                </limpo></p><br>
+            </div>   
+        </div>
+    </div>
+            <!--
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+            -->
+    <div id="recomendacoesResultadoComico">
+        <h1>Peças que talvez conversem com você</h1> <br><br>
+
+        <div class="wraperCardRecomendacoesResultados">
+            <div class="cardRecomendacoesResultados">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRcI5cbCEI806KazuI7Kyg_yqs2WJdJH-ZAug&s" alt="">
+                <p class="infoCardRecomendacoesResul"><span>VISITA A DOMICÍLIO</span></p>
+                <p class="infoCardRecomendacoesResul">Sensível comédia dramática sobre o reencontro inesperado de dois homens que viveram um amor escondido na adolescência</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Oficina</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>20/06 a 12/07</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://blogger.googleusercontent.com/img/b/R29vZ2xl/AVvXsEg1uM14vTAMtukeuf7IhejxuUYU-TswurE4qd_1aIsFvWn1-7Mx1R0nkG1TXd2WwwF9RHGrzXgMOPL0b7HXT_DpJ2c9owU0Tt2XA0o7PwKVSGYgTJMpBgYh79-h55D-upkJM0Dnlc0-DuQL/s1600/Gracias+a+la+Vida+-foto+de+Rombolli+Torres+Photografia+-6.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Gracias a La Vida </span></p>
+                <p class="infoCardRecomendacoesResul">Espetáculo musical e poético que realiza uma emocionante viagem histórica pelas revoluções culturais e políticas da América Latina.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Parlapatões</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>02/07 a 30/07</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://infoteatro.com.br/wp-content/uploads/2025/10/EDM_0568-e1760040418948.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Uma Mão Lava A Outra E As Duas Batem Palma!</span></p>
+                <p class="infoCardRecomendacoesResul">Comédia ácida sobre como o vício em apostas online desestabiliza uma família após a chegada de um parente</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Parlapatões</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>30/05 a 31/06</p>
+            </div>
+            
+            <div class="cardRecomendacoesResultados">
+                <img src="https://assets.bileto.sympla.com.br/eventmanager/production/1bc9ml2en5m7ldvbbisvcvtum8t1rvts4po4j6p0ubqpleaeqkmaqkrin1e7s821c4snef3apiv61f88ah7f0j4844j8vdrc0394kvn.webp" alt="">
+                <p class="infoCardRecomendacoesResul"><span>CURTO – CIRCUITO</span></p>
+                <p class="infoCardRecomendacoesResul">Comédia com Luiz Fernando Guimarães que retrata, de forma absurda e hilária, as manias e ansiedades do mundo contemporâneo.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Renaissance</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>16/05 a 31/05</p>
+            </div>            
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>Companhias que valem a pena conhecer mais</h1> <br><br>
+        <h3>Cada companhia desenvolve sua própria linguagem artística, estética e forma de criar teatro. Com base no seu resultado, talvez essas companhias despertem seu interesse.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRViPDDIZ6qUSXzrv9mmlFhi35xOIHdKid9BQ&s" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Parlapatões</span></p>
+                <p class="infoCardRecomendacoesResul">Grupo tradicional que mistura técnicas de circo, comédia física, ironia e peças clássicas com forte apelo popular e político.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://clubebarbixas.com.br/wp-content/uploads/2022/11/Logo-branco-fundo-sem-piada-1024x1024.png" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Cia Barbixas de Humor</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia focada em improvisação teatral ágil, esquetes rápidas e jogos humorísticos que envolvem e interagem intensamente com a plateia.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://pbs.twimg.com/profile_images/1025044028327378944/GqaZwriY_400x400.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Clube do Minhoca</span></p>
+                <p class="infoCardRecomendacoesResul">Teatro e coletivo underground de humor focado em comédia experimental, shows de stand-up intimistas e lançamentos de novos talentos.</p><br>
+            </div>
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>O teatro além do teatro</h1> <br><br>
+        <h3>Cinema, literatura, séries e outras formas de arte também carregam elementos teatrais. Talvez algum desses conteúdos converse com você.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultados">
+                <img src="https://rollingstone.com.br/wp-content/uploads/2025/10/50-anos-de-The-Rocky-Horror-Picture-Show-como-esta-o-elenco-atualmente.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>The Rocky Horror Picture Show</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Filme)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Um musical cult caótico, exagerado e libertador que mistura terror, humor, sexualidade e performances extravagantes. Acompanhamos Brad e Janet entrando em um castelo habitado por figuras bizarras lideradas por Dr. Frank-N-Furter. A obra virou símbolo de liberdade artística, teatralidade, cultura queer e celebração do estranho e do excêntrico.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://www.nme.com/wp-content/uploads/2016/11/twin-peaks.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Twin Peaks</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Série)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Após o assassinato de Laura Palmer, uma pequena cidade revela segredos perturbadores e acontecimentos surreais. Misturando suspense, humor estranho, sonho e horror psicológico, a série cria uma atmosfera profundamente teatral e experimental. A obra explora dualidade humana, mistério e simbolismo, influenciando cinema, televisão e linguagens artísticas contemporâneas.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://images.mubicdn.net/images/film/163802/cache-192547-1745493491/image-w1280.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Cabaret (1993)</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Peça/musical)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Ambientado na Alemanha pré-nazista, acompanha artistas e frequentadores do decadente Kit Kat Club enquanto tensões políticas crescem fora do palco. A obra mistura música, sensualidade, crítica social e melancolia, usando o cabaré como metáfora para escapismo, decadência e transformação social em tempos de crise e repressão.
+                </limpo></p><br>
+            </div>   
+        </div>
+    </div>
+            <!--
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+            -->
+    <div id="recomendacoesResultadoMusical">
+        <h1>Peças que talvez conversem com você</h1> <br><br>
+
+        <div class="wraperCardRecomendacoesResultados">
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/7gatinhos.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Tina - Tina Turner, O Musical</span></p>
+                <p class="infoCardRecomendacoesResul">Biografia eletrizante da Rainha do Rock, destacando sua superação, voz potente e grandes sucessos musicais que marcaram gerações.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Santander</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>26/02 a 12/07</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/quarto2107.png" alt="">
+                <p class="infoCardRecomendacoesResul">Flashdance – O Musical<span></span></p>
+                <p class="infoCardRecomendacoesResul">Uma operária que dança à noite luta pelo sonho de entrar em uma renomada escola de balé, ao som de hits dos anos 1980.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Claro Mais SP </p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>09/04 a 31/05</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/oVenenoDoTeatro.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Shrek - O Musical</span></p>
+                <p class="infoCardRecomendacoesResul">Aventura divertida e emocionante de um ogro e um burro falante para resgatar uma princesa em um reino mágico.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Renault</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>15/04 a 05/07</p>
+            </div> 
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>Companhias que valem a pena conhecer mais</h1> <br><br>
+        <h3>Cada companhia desenvolve sua própria linguagem artística, estética e forma de criar teatro. Com base no seu resultado, talvez essas companhias despertem seu interesse.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://pbs.twimg.com/profile_images/2857758122/881cdf7b8c46d9ad310e59bce1e588e0_400x400.jpeg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Teatro Renault</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia conhecida por montagens provocativas, urbanas, intensas e muito ligadas à Praça Roosevelt. Mistura performance, experimentação e dramaturgia contemporânea.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://portalbelohorizonte.com.br/sites/default/files/arquivos/eventos/2020-04/teatro-oficina.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Teatro Oficina</span></p>
+                <p class="infoCardRecomendacoesResul">Uma das companhias mais importantes do teatro experimental brasileiro, criada por José Celso Martinez Corrêa. Trabalha teatro ritualístico, político e corporal.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="./assets/imgs/imgPecas/logoCemiAutomoveis.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Cemitério do Automóveis</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia fundada por Mário Bortolotto, com estética underground, marginal e existencialista.</p><br>
+            </div>
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>O teatro além do teatro</h1> <br><br>
+        <h3>Cinema, literatura, séries e outras formas de arte também carregam elementos teatrais. Talvez algum desses conteúdos converse com você.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultados">
+                <img src="https://rollingstone.com.br/wp-content/uploads/2025/10/50-anos-de-The-Rocky-Horror-Picture-Show-como-esta-o-elenco-atualmente.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>The Rocky Horror Picture Show</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Filme)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Um musical cult caótico, exagerado e libertador que mistura terror, humor, sexualidade e performances extravagantes. Acompanhamos Brad e Janet entrando em um castelo habitado por figuras bizarras lideradas por Dr. Frank-N-Furter. A obra virou símbolo de liberdade artística, teatralidade, cultura queer e celebração do estranho e do excêntrico.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://images.mubicdn.net/images/film/163802/cache-192547-1745493491/image-w1280.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Cabaret (1993)</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Peça/musical)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Ambientado na Alemanha pré-nazista, acompanha artistas e frequentadores do decadente Kit Kat Club enquanto tensões políticas crescem fora do palco. A obra mistura música, sensualidade, crítica social e melancolia, usando o cabaré como metáfora para escapismo, decadência e transformação social em tempos de crise e repressão.
+                </limpo></p><br>
+            </div>   
+        </div>
+    </div>
+            <!--
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+            -->
+    <div id="recomendacoesResultadoContemporaneo">
+        <h1>Peças que talvez conversem com você</h1> <br><br>
+
+        <div class="wraperCardRecomendacoesResultados">
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/7gatinhos.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>7 Gatinhos</span></p>
+                <p class="infoCardRecomendacoesResul">Tragédia ácida de Nelson Rodrigues sobre hipocrisia familiar, desejos reprimidos, moralidade, violência e decadência emocional na classe média brasileira.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Oficina</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>20/06 a 12/07</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/quarto2107.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Quarto 2107</span></p>
+                <p class="infoCardRecomendacoesResul">Suspense psicológico claustrofóbico sobre isolamento, obsessão e identidade, ambientado em um quarto carregado de tensão e mistério constante.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Parlapatões</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>22/05 a 07/06</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/oVenenoDoTeatro.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>O Veneno do Teatro</span></p>
+                <p class="infoCardRecomendacoesResul">Thriller teatral intenso onde manipulação, crueldade e obsessão artística transformam atuação e realidade em experiências perigosamente inseparáveis.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>SP Escola de Teatro</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>23/05 a 07/06</p>
+            </div>
+            
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/rasgaCoracao.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Rasga Coração</span></p>
+                <p class="infoCardRecomendacoesResul">Drama político e familiar que confronta diferentes gerações, ideologias e sonhos, explorando conflitos sociais, juventude, repressão e liberdade.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Oficina</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>29/05 a 08/06</p>
+            </div>            
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>Companhias que valem a pena conhecer mais</h1> <br><br>
+        <h3>Cada companhia desenvolve sua própria linguagem artística, estética e forma de criar teatro. Com base no seu resultado, talvez essas companhias despertem seu interesse.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://satyros.com.br/wp-content/uploads/2025/01/278329525_533851168098399_5883224764712691425_n-1024x1024.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Os Satyros</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia conhecida por montagens provocativas, urbanas, intensas e muito ligadas à Praça Roosevelt. Mistura performance, experimentação e dramaturgia contemporânea.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://portalbelohorizonte.com.br/sites/default/files/arquivos/eventos/2020-04/teatro-oficina.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Teatro Oficina</span></p>
+                <p class="infoCardRecomendacoesResul">Uma das companhias mais importantes do teatro experimental brasileiro, criada por José Celso Martinez Corrêa. Trabalha teatro ritualístico, político e corporal.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="./assets/imgs/imgPecas/logoCemiAutomoveis.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Cemitério do Automóveis</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia fundada por Mário Bortolotto, com estética underground, marginal e existencialista.</p><br>
+            </div>
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>O teatro além do teatro</h1> <br><br>
+        <h3>Cinema, literatura, séries e outras formas de arte também carregam elementos teatrais. Talvez algum desses conteúdos converse com você.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultados">
+                <img src="https://rollingstone.com.br/wp-content/uploads/2025/10/50-anos-de-The-Rocky-Horror-Picture-Show-como-esta-o-elenco-atualmente.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>The Rocky Horror Picture Show</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Filme)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Um musical cult caótico, exagerado e libertador que mistura terror, humor, sexualidade e performances extravagantes. Acompanhamos Brad e Janet entrando em um castelo habitado por figuras bizarras lideradas por Dr. Frank-N-Furter. A obra virou símbolo de liberdade artística, teatralidade, cultura queer e celebração do estranho e do excêntrico.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://www.nme.com/wp-content/uploads/2016/11/twin-peaks.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Twin Peaks</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Série)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Após o assassinato de Laura Palmer, uma pequena cidade revela segredos perturbadores e acontecimentos surreais. Misturando suspense, humor estranho, sonho e horror psicológico, a série cria uma atmosfera profundamente teatral e experimental. A obra explora dualidade humana, mistério e simbolismo, influenciando cinema, televisão e linguagens artísticas contemporâneas.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://images.mubicdn.net/images/film/163802/cache-192547-1745493491/image-w1280.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Cabaret (1993)</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Peça/musical)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Ambientado na Alemanha pré-nazista, acompanha artistas e frequentadores do decadente Kit Kat Club enquanto tensões políticas crescem fora do palco. A obra mistura música, sensualidade, crítica social e melancolia, usando o cabaré como metáfora para escapismo, decadência e transformação social em tempos de crise e repressão.
+                </limpo></p><br>
+            </div>   
+        </div>
+    </div>
+            <!--
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+                    SEPARAÇÃO
+            -->
+    <div id="recomendacoesResultadoComico">
+        <h1>Peças que talvez conversem com você</h1> <br><br>
+
+        <div class="wraperCardRecomendacoesResultados">
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/7gatinhos.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>7 Gatinhos</span></p>
+                <p class="infoCardRecomendacoesResul">Tragédia ácida de Nelson Rodrigues sobre hipocrisia familiar, desejos reprimidos, moralidade, violência e decadência emocional na classe média brasileira.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Oficina</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>20/06 a 12/07</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/quarto2107.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Quarto 2107</span></p>
+                <p class="infoCardRecomendacoesResul">Suspense psicológico claustrofóbico sobre isolamento, obsessão e identidade, ambientado em um quarto carregado de tensão e mistério constante.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Parlapatões</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>22/05 a 07/06</p>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/oVenenoDoTeatro.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>O Veneno do Teatro</span></p>
+                <p class="infoCardRecomendacoesResul">Thriller teatral intenso onde manipulação, crueldade e obsessão artística transformam atuação e realidade em experiências perigosamente inseparáveis.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>SP Escola de Teatro</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>23/05 a 07/06</p>
+            </div>
+            
+            <div class="cardRecomendacoesResultados">
+                <img src="./assets/imgs/imgPecas/rasgaCoracao.png" alt="">
+                <p class="infoCardRecomendacoesResul"><span>Rasga Coração</span></p>
+                <p class="infoCardRecomendacoesResul">Drama político e familiar que confronta diferentes gerações, ideologias e sonhos, explorando conflitos sociais, juventude, repressão e liberdade.</p><br>
+                <p class="infoCardRecomendacoesResul"><span>Local: </span>Teatro Oficina</p>
+                <p class="infoCardRecomendacoesResul"><span>Data: </span>29/05 a 08/06</p>
+            </div>            
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>Companhias que valem a pena conhecer mais</h1> <br><br>
+        <h3>Cada companhia desenvolve sua própria linguagem artística, estética e forma de criar teatro. Com base no seu resultado, talvez essas companhias despertem seu interesse.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://satyros.com.br/wp-content/uploads/2025/01/278329525_533851168098399_5883224764712691425_n-1024x1024.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Os Satyros</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia conhecida por montagens provocativas, urbanas, intensas e muito ligadas à Praça Roosevelt. Mistura performance, experimentação e dramaturgia contemporânea.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="https://portalbelohorizonte.com.br/sites/default/files/arquivos/eventos/2020-04/teatro-oficina.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Teatro Oficina</span></p>
+                <p class="infoCardRecomendacoesResul">Uma das companhias mais importantes do teatro experimental brasileiro, criada por José Celso Martinez Corrêa. Trabalha teatro ritualístico, político e corporal.</p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultadosCias">
+                <img src="./assets/imgs/imgPecas/logoCemiAutomoveis.jpg" alt="">
+                <br><br>
+                <p class="infoCardRecomendacoesResul"><span>Cemitério do Automóveis</span></p>
+                <p class="infoCardRecomendacoesResul">Companhia fundada por Mário Bortolotto, com estética underground, marginal e existencialista.</p><br>
+            </div>
+        </div>
+
+        <br><br><br><br><hr><br>
+
+        <h1>O teatro além do teatro</h1> <br><br>
+        <h3>Cinema, literatura, séries e outras formas de arte também carregam elementos teatrais. Talvez algum desses conteúdos converse com você.</h3> <br><br><br>
+
+        <div class="wraperCardRecomendacoesResultados" style="justify-content: space-evenly;">
+            <div class="cardRecomendacoesResultados">
+                <img src="https://rollingstone.com.br/wp-content/uploads/2025/10/50-anos-de-The-Rocky-Horror-Picture-Show-como-esta-o-elenco-atualmente.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>The Rocky Horror Picture Show</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Filme)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Um musical cult caótico, exagerado e libertador que mistura terror, humor, sexualidade e performances extravagantes. Acompanhamos Brad e Janet entrando em um castelo habitado por figuras bizarras lideradas por Dr. Frank-N-Furter. A obra virou símbolo de liberdade artística, teatralidade, cultura queer e celebração do estranho e do excêntrico.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://www.nme.com/wp-content/uploads/2016/11/twin-peaks.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Twin Peaks</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Série)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Após o assassinato de Laura Palmer, uma pequena cidade revela segredos perturbadores e acontecimentos surreais. Misturando suspense, humor estranho, sonho e horror psicológico, a série cria uma atmosfera profundamente teatral e experimental. A obra explora dualidade humana, mistério e simbolismo, influenciando cinema, televisão e linguagens artísticas contemporâneas.
+                </limpo></p><br>
+            </div>
+
+            <div class="cardRecomendacoesResultados">
+                <img src="https://images.mubicdn.net/images/film/163802/cache-192547-1745493491/image-w1280.jpg" alt="">
+                <p class="infoCardRecomendacoesResul"><spanTituloOutros>Cabaret (1993)</spanTituloOutros></p>
+                <p class="infoCardRecomendacoesResul">(Peça/musical)</p>
+                <p class="infoCardRecomendacoesResul"><limpo>
+                    Ambientado na Alemanha pré-nazista, acompanha artistas e frequentadores do decadente Kit Kat Club enquanto tensões políticas crescem fora do palco. A obra mistura música, sensualidade, crítica social e melancolia, usando o cabaré como metáfora para escapismo, decadência e transformação social em tempos de crise e repressão.
+                </limpo></p><br>
+            </div>   
+        </div>
+    </div>            
+
+
+
+
+
+
+
 </body>
 </html>
 <script>
+    let perguntaAtual = 1;
+
+    window.onload = function(){
+        document.getElementById("pergunta1").style.display = "block";
+    }
+
+    function proximaPergunta(){
+
+        document.getElementById(`pergunta${perguntaAtual}`).style.display = "none";
+
+        perguntaAtual++;
+
+        document.getElementById(`pergunta${perguntaAtual}`).style.display = "block";
+    }
     let pontosMusical = 0;
     let pontosClassico = 0;
     let pontosContemporaneo = 0;
     let pontosExperimental = 0;
     let pontosComico = 0;
 
-    function cadastrarResultado(){
-        let respostaPer1 = document.querySelector('input[name="pergunta1"]:checked').value;
-        let respostaPer2 = document.querySelector('input[name="pergunta2"]:checked').value;
-        let respostaPer3 = document.querySelector('input[name="pergunta3"]:checked').value;
-        let respostaPer4 = document.querySelector('input[name="pergunta4"]:checked').value;
-        let respostaPer5 = document.querySelector('input[name="pergunta5"]:checked').value;
-        let respostaPer6 = document.querySelector('input[name="pergunta6"]:checked').value;
-        let respostaPer7 = document.querySelector('input[name="pergunta7"]:checked').value;
-        let respostaPer8 = document.querySelector('input[name="pergunta8"]:checked').value;
-        let respostaPer9 = document.querySelector('input[name="pergunta9"]:checked').value;
+    
 
-        // PERGUNTA 1
-        if (respostaPer1 == 'musical'){
-            pontosMusical++;
-        } else if (respostaPer1 == 'classico'){
-            pontosClassico++;
-        } else if (respostaPer1 == 'contemporaneo'){
-            pontosContemporaneo++;
-        } else if (respostaPer1 == 'experimental'){
-            pontosExperimental++;
-        } else {
-            pontosComico++;
+        let respostaDaVez = '';
+        for (let i = 1; i <= 9; i++){
+            if (i == 1){
+                respostaDaVez = respostaPer1;
+            } else if (i == 2){
+                respostaDaVez = respostaPer2;
+            } else if (i == 3){
+                respostaDaVez = respostaPer3;
+            } else if (i == 4){
+                respostaDaVez = respostaPer4;
+            } else if (i == 5){
+                respostaDaVez = respostaPer5;
+            } else if (i == 6){
+                respostaDaVez = respostaPer6;
+            } else if (i == 7){
+                respostaDaVez = respostaPer7;
+            } else if (i == 8){
+                respostaDaVez = respostaPer8;
+            } else if (i == 9){
+                respostaDaVez = respostaPer9;
+            }
+
+            if (i==9){
+                // PERGUNTA 9 QUE VALE 2 PONTOS PRA PODE DESEMPATAR SE TIVER 
+                if (respostaPer9 == 'musical2'){
+                    pontosMusical+= 2;
+                } else if (respostaPer9 == 'classico2'){
+                    pontosClassico+= 2;
+                } else if (respostaPer9 == 'contemporaneo2'){
+                    pontosContemporaneo+= 2;
+                } else if (respostaPer9 == 'experimental2'){
+                    pontosExperimental+= 2;
+                } else {
+                    pontosComico += 2;
+                }
+            } else {
+                if (respostaDaVez == 'musical'){
+                    pontosMusical++;
+                } else if (respostaDaVez == 'classico'){
+                    pontosClassico++;
+                } else if (respostaDaVez == 'contemporaneo'){
+                    pontosContemporaneo++;
+                } else if (respostaDaVez == 'experimental'){
+                    pontosExperimental++;
+                } else {
+                    pontosComico++;
+                }
+            }
         }
 
-        // PERGUNTA 2
-        if (respostaPer2 == 'musical'){
-            pontosMusical++;
-        } else if (respostaPer2 == 'classico'){
-            pontosClassico++;
-        } else if (respostaPer2 == 'contemporaneo'){
-            pontosContemporaneo++;
-        } else if (respostaPer2 == 'experimental'){
-            pontosExperimental++;
-        } else {
-            pontosComico++;
-        }
 
-        // PERGUNTA 3
-        if (respostaPer3 == 'musical'){
-            pontosMusical++;
-        } else if (respostaPer3 == 'classico'){
-            pontosClassico++;
-        } else if (respostaPer3 == 'contemporaneo'){
-            pontosContemporaneo++;
-        } else if (respostaPer3 == 'experimental'){
-            pontosExperimental++;
-        } else {
-            pontosComico++;
-        }
-
-        // PERGUNTA 4
-        if (respostaPer4 == 'musical'){
-            pontosMusical++;
-        } else if (respostaPer4 == 'classico'){
-            pontosClassico++;
-        } else if (respostaPer4 == 'contemporaneo'){
-            pontosContemporaneo++;
-        } else if (respostaPer4 == 'experimental'){
-            pontosExperimental++;
-        } else {
-            pontosComico++;
-        }
-
-        // PERGUNTA 5
-        if (respostaPer5 == 'musical'){
-            pontosMusical++;
-        } else if (respostaPer5 == 'classico'){
-            pontosClassico++;
-        } else if (respostaPer5 == 'contemporaneo'){
-            pontosContemporaneo++;
-        } else if (respostaPer5 == 'experimental'){
-            pontosExperimental++;
-        } else {
-            pontosComico++;
-        }
-
-        // PERGUNTA 6
-        if (respostaPer6 == 'musical'){
-            pontosMusical++;
-        } else if (respostaPer6 == 'classico'){
-            pontosClassico++;
-        } else if (respostaPer6 == 'contemporaneo'){
-            pontosContemporaneo++;
-        } else if (respostaPer6 == 'experimental'){
-            pontosExperimental++;
-        } else {
-            pontosComico++;
-        }
-
-        // PERGUNTA 7
-        if (respostaPer7 == 'musical'){
-            pontosMusical++;
-        } else if (respostaPer7 == 'classico'){
-            pontosClassico++;
-        } else if (respostaPer7 == 'contemporaneo'){
-            pontosContemporaneo++;
-        } else if (respostaPer7 == 'experimental'){
-            pontosExperimental++;
-        } else {
-            pontosComico++;
-        }
-
-        // PERGUNTA 8
-        if (respostaPer8 == 'musical'){
-            pontosMusical++;
-        } else if (respostaPer8 == 'classico'){
-            pontosClassico++;
-        } else if (respostaPer8 == 'contemporaneo'){
-            pontosContemporaneo++;
-        } else if (respostaPer8 == 'experimental'){
-            pontosExperimental++;
-        } else {
-            pontosComico++;
-        }
-
-        // PERGUNTA 9 QUE VALE 2 PONTOS PRA PODE DESEMPATAR SE TIVER 
-        if (respostaPer9 == 'musical2'){
-            pontosMusical+= 2;
-        } else if (respostaPer9 == 'classico2'){
-            pontosClassico+= 2;
-        } else if (respostaPer9 == 'contemporaneo2'){
-            pontosContemporaneo+= 2;
-        } else if (respostaPer9 == 'experimental2'){
-            pontosExperimental+= 2;
-        } else {
-            pontosComico += 2;
-        }
-
+        console.log(`Musical: ${pontosMusical}  |  Classico: ${pontosClassico}  | Contemporaneo: ${pontosContemporaneo}  |  Experimental: ${pontosExperimental}  |  Comico: ${pontosComico}  |  `);
 
         let resultadoFinal = ``;
 
-        if (pontosMusical > pontosClassico ||
-            pontosMusical > pontosComico ||
-            pontosMusical > pontosContemporaneo ||
+        if (pontosMusical > pontosClassico &&
+            pontosMusical > pontosComico &&
+            pontosMusical > pontosContemporaneo &&
             pontosMusical > pontosExperimental){
             resultadoFinal = `musical`;
-        } else if (pontosClassico  > pontosMusical ||
-            pontosClassico > pontosComico ||
-            pontosClassico > pontosContemporaneo ||
+
+            titulo = `Seu resultado:<span style="color: #6A0002"> Teatro Musical</span>`;
+            descricao = `Você parece se conectar com o teatro musical — uma linguagem intensa,
+            emocional e grandiosa, marcada por música, espetáculo, dança e emoção.
+            Obras musicais costumam transformar sentimentos em cena de forma explosiva
+            e sensorial. Abaixo, você encontrará recomendações que talvez conversem
+            com você.`;         
+
+            document.getElementById("recomendacoesResultadoMusical").style.display = "block";
+        } else if (pontosClassico  > pontosMusical &&
+            pontosClassico > pontosComico &&
+            pontosClassico > pontosContemporaneo &&
             pontosClassico > pontosExperimental){
             resultadoFinal = `classico`;
 
-        } else if (pontosContemporaneo > pontosClassico ||
-            pontosContemporaneo > pontosComico ||
-            pontosContemporaneo > pontosMusical ||
+            titulo = `Seu resultado:<span style="color: #6A0002"> Teatro Clássico</span>`;
+            descricao = `Você parece gostar do teatro clássico — obras marcadas por grandes textos,
+            personagens fortes, atuação intensa e histórias atemporais.
+            Esse tipo de teatro valoriza dramaturgia, construção narrativa e tradição.
+            Abaixo, você encontrará recomendações que talvez conversem com você.`;
+
+            document.getElementById("recomendacoesResultadoClassico").style.display = "block";
+        } else if (pontosContemporaneo > pontosClassico &&
+            pontosContemporaneo > pontosComico &&
+            pontosContemporaneo > pontosMusical &&
             pontosContemporaneo > pontosExperimental){
             resultadoFinal = `contemporaneo`;
 
-        } else if (pontosExperimental > pontosClassico ||
-            pontosExperimental > pontosComico ||
-            pontosExperimental > pontosContemporaneo ||
+            titulo = `Seu resultado: Teatro Contemporâneo`;
+            descricao = `Você parece se conectar com o teatro contemporâneo — uma linguagem moderna,
+            reflexiva e ligada a temas sociais, emocionais e políticos atuais.
+            Essas obras costumam provocar identificação e questionamentos.
+            Abaixo, você encontrará recomendações baseadas no seu resultado.`;
+
+            document.getElementById("recomendacoesResultadoContemporaneo").style.display = "block";
+        } else if (pontosExperimental > pontosClassico &&
+            pontosExperimental > pontosComico &&
+            pontosExperimental > pontosContemporaneo &&
             pontosExperimental > pontosMusical){
             resultadoFinal = `experimental`;
 
-        } else if (pontosComico > pontosClassico ||
-            pontosComico > pontosMusical ||
-            pontosComico > pontosContemporaneo ||
+            titulo = `Seu resultado:<span style="color: #6A0002"> Teatro Experimental</span>`;
+            descricao = `Você parece se identificar com o teatro experimental — uma linguagem
+            artística livre, estranha, provocativa e fora do convencional.
+            Esse tipo de teatro rompe regras, mistura linguagens e cria experiências
+            intensas e inesperadas. Abaixo, você encontrará recomendações baseadas
+            no seu resultado.`;
+
+            document.getElementById("recomendacoesResultadoExperimental").style.display = "block";
+
+        } else if (pontosComico > pontosClassico &&
+            pontosComico > pontosMusical &&
+            pontosComico > pontosContemporaneo &&
             pontosComico > pontosExperimental){
             resultadoFinal = `comico`;
-        }
-        console.log(resultadoFinal);
+            titulo = `Seu resultado:<span style="color: #6A0002"> Teatro Cômico</span>`;
+            descricao = `Você parece gostar do teatro cômico — uma linguagem divertida, energética
+            e cheia de interação, humor e exagero.
+            O teatro de comédia pode ser leve, absurdo, crítico ou completamente caótico.
+            Abaixo, você encontrará recomendações que talvez conversem com você.`;
 
+            document.getElementById("recomendacoesResultadoComico").style.display = "block";
+        }
+
+
+
+        console.log(resultadoFinal);
+        document.getElementById("tituloResultado").innerHTML = titulo;
+        document.getElementById("textoResultado").innerHTML = descricao;
+
+        document.getElementById(`pergunta${perguntaAtual}`).style.display = "none";
+        document.getElementById("resultadoQuiz").style.display = "block";
 
         // enviar pro back, no 
 
@@ -360,5 +1004,5 @@
             console.log(erro);
         });
 
-    }
+    /*}*/
 </script>

@@ -1,0 +1,46 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #100E0F;
+  width: 100%;
+  height: 100%;
+  font-family: 'Cormorant Garamond';
+}
+
+.wrapperArtigo{
+    margin-top: 230px; /* o padrao pra ficar certinho da navbar é esse aq 121.85px;*/
+    width: 65%;
+    margin-left: 17.5%;
+    background-color: #d9d9d9d0;
+    padding: 60px;
+    border-radius: 40px;
+}
+
+#tituloArtigo{
+    font-size: 35px;
+}
+
+#conteudoArtigo{
+    margin-top: 50px;
+    font-size: 19px;
+}
+
+#categoriaArtigo{
+    font-size: 20px;
+    background-color: blueviolet;
+    color: white;
+    padding: 5px;
+    display: inline-block;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    border-radius: 10px;
+
+}

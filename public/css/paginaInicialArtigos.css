@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&family=Black+Han+Sans&family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  background-color: #100E0F;
+  width: 100%;
+  height: 100%;
+  font-family: 'Cormorant Garamond';
+  /*padding-top: 121.85px;*/
+}
+
+.banner {
+  width: 100%;
+  height: 485px;
+  margin-top: 121.85px;
+  background-image: url(../assets/imgs/entrelinhas.png);
+  background-position: center;
+}
+
+
+#listaArtigosOpinioes,
+#listaArtigosResenhas{
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  width: 85%;
+  margin-left: 7.5%;
+}
+
+.wrapperArtigoOpiniao,
+.wrapperResenhas{
+  margin-top: 30px;
+}
+
+h1{
+  color: white;
+  margin-left: 7.5%;
+  margin-bottom: 30px;
+}
+
+
+.tituloArtigos{
+  color: black;
+  margin-left: -7.5%;
+  
+}
+
+.artigos{
+    width: 85%;
+    margin-left: 7.5%;
+}
+
+.artigosDeReflexoes, .artigosResenhas{
+    width: 100%;
+    height: auto;
+    color: white;
+}
+
+.wrapperArtigos{
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 50px;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.cardArtigo{
+    width: 320px;
+    height: 370px;
+    background-color: #d9d9d9;
+    color: black;
+    padding-left: 20px;
+    padding-right: 20px;
+    padding-top: 16px;
+    text-align: left;
+    transition: transform 0.7s ease;
+    cursor: default;
+}
+
+.cardArtigo:hover{
+    transform: scale(1.03);
+}
+
+.cardArtigo > img{
+    width: 100%;
+    height: auto;
+    margin-top: 20px;
+}
+
+
+.tituloMostraArtigo{
+  font-size: 25px;
+  font-weight: bold;
+}
+.previaMostraArtigo{
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+

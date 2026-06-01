@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desatino, Artigos</title>
+    <link rel="icon" href="./assets/icon/iconPrincipal.png">
+    <link rel="stylesheet" href="/css/paginaInicialArtigos.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <a href="coxia.html">
+            <img src="assets/icon/desatino.png" alt="">
+          </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#">Recomendações de peças</a></li>
+            <li><a href="#">Artigos</a></li>
+        </ul>
+    </nav>
+    <div class="banner"></div>
+
+    <br><br><br><br>
+
+
+    <div class="wrapperArtigoOpiniao">
+        <h1>Artigos de Opiniões</h1>
+        <div id="listaArtigosOpinioes"></div>
+    </div>
+
+    <div class="wrapperResenhas">
+        <h1>Resenhas de Peças</h1>
+        <div id="listaArtigosResenhas"></div>
+    </div>
+
+
+
+<!--
+    <div class="artigos">
+        <div class="artigosDeReflexoes">
+            <h1>Artigos sobre Teatro</h1> <br><br>
+            <div class="wrapperArtigos">
+                <div class="cardArtigo">
+                    <p class="tituloMostraArtigo">Lorem Ipsum: dolor sit amet, consectetur.</p>
+                    <p class="previaMostraArtigo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <img src="./assets/imgs/img6Satyros.jpg" alt="">
+                </div>
+
+                <div class="cardArtigo">
+                    <p class="tituloMostraArtigo">Lorem Ipsum: dolor sit amet, consectetur.</p>
+                    <p class="previaMostraArtigo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <img src="./assets/imgs/img6Satyros.jpg" alt="">
+                </div>
+                
+                <div class="cardArtigo">
+                    <p class="tituloMostraArtigo">Lorem Ipsum: dolor sit amet, consectetur.</p>
+                    <p class="previaMostraArtigo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <img src="./assets/imgs/img6Satyros.jpg" alt="">
+                </div>
+                
+                <div class="cardArtigo">
+                    <p class="tituloMostraArtigo">Lorem Ipsum: dolor sit amet, consectetur.</p>
+                    <p class="previaMostraArtigo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <img src="./assets/imgs/img6Satyros.jpg" alt="">
+                </div>                
+            </div>
+        </div>
+
+        <br><br><br><br><br><br><br><br><br>
+
+        <div class="artigosResenhas">
+            <h1>Resenhas sobre Teatro</h1> <br><br>
+            <div class="wrapperArtigos">
+                <div class="cardArtigo">
+                    <p class="tituloMostraArtigo">Lorem Ipsum: dolor sit amet, consectetur.</p>
+                    <p class="previaMostraArtigo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <img src="./assets/imgs/img6Satyros.jpg" alt="">
+                </div>
+
+                <div class="cardArtigo">
+                    <p class="tituloMostraArtigo">Lorem Ipsum: dolor sit amet, consectetur.</p>
+                    <p class="previaMostraArtigo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <img src="./assets/imgs/img6Satyros.jpg" alt="">
+                </div>
+                
+                <div class="cardArtigo">
+                    <p class="tituloMostraArtigo">Lorem Ipsum: dolor sit amet, consectetur.</p>
+                    <p class="previaMostraArtigo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <img src="./assets/imgs/img6Satyros.jpg" alt="">
+                </div>
+                
+                <div class="cardArtigo">
+                    <p class="tituloMostraArtigo">Lorem Ipsum: dolor sit amet, consectetur.</p>
+                    <p class="previaMostraArtigo">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua</p>
+                    <img src="./assets/imgs/img6Satyros.jpg" alt="">
+                </div>                
+            </div>            
+        </div>
+    </div>
+
+-->
+</body>
+</html>
+<script>
+    fetch("/dashboard/buscarArtigos")
+    .then(res => res.json())
+    .then(artigos => {
+
+        for(let i = 0; i < artigos.length; i++){
+
+            if (artigos[i].categoria == 'Artigo de Opinião'){
+                listaArtigosOpinioes.innerHTML += `<div class="cardArtigo" onclick="abrirArtigo(${artigos[i].idArtigo})">
+                                                        <h2 class="tituloArtigos">${artigos[i].titulo}</h2>
+                                                        <p>${artigos[i].categoria}</p>
+                                                    </div>`;
+            } else {
+                listaArtigosResenhas.innerHTML += `<div class="cardArtigo" onclick="abrirArtigo(${artigos[i].idArtigo})">
+                                                        <h2 class="tituloArtigos">${artigos[i].titulo}</h2>
+                                                        <p>${artigos[i].categoria}</p>
+                                                    </div>`;
+            }                                                     
+        }
+
+    });
+
+
+
+    function abrirArtigo(idArtigo){
+
+        sessionStorage.ID_ARTIGO = idArtigo;
+
+        window.location.href = "artigo.html";
+    }
+
+</script>

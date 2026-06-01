@@ -58,6 +58,41 @@ function buscarResulLingPerfil() {
     return database.executar(instrucaoSql);
 }
 
+
+//buscar artivgo
+
+function cadastrarArtigos(titulo, conteudo, categoria) {
+    console.log("ACESSEI O USUARIO MODEL \n \n\t\t >> Se aqui der erro de 'Error: connect ECONNREFUSED',\n \t\t >> verifique suas credenciais de acesso ao banco\n \t\t >> e se o servidor de seu BD está rodando corretamente. \n\n function cadastrar():", titulo, conteudo, categoria);
+    
+    // Insira exatamente a query do banco aqui, lembrando da nomenclatura exata nos valores
+    //  e na ordem de inserção dos dados.
+    var instrucaoSql = `
+        INSERT INTO artigo (titulo, conteudo, categoria) VALUES ('${titulo}', '${conteudo}', '${categoria}');        
+    `;
+    console.log("Executando a instrução SQL: \n" + instrucaoSql);
+    return database.executar(instrucaoSql);
+}
+
+//pra pegar todos os artigos
+function buscarArtigos() {
+    var instrucaoSql = `
+        SELECT * FROM artigo;`;
+    return database.executar(instrucaoSql);
+}
+
+//pra pegar so pelo id
+function buscarArtigoPorId(id){
+    var instrucaoSql = `SELECT * FROM artigo WHERE idArtigo = ${id};`;
+
+    return database.executar(instrucaoSql);
+}
+
+function buscarArtigoPorId(idArtigo) {
+    var instrucaoSql = `SELECT * FROM artigo WHERE idArtigo = ${idArtigo};`;
+    return database.executar(instrucaoSql);
+}
+
+
 module.exports = {
     //PRA KPIS
     buscarUsuarios,
@@ -68,5 +103,9 @@ module.exports = {
     // PRA GRAFICOS
     buscarResultadosQuiz,
     buscarResultadosPerfis,
-    buscarResulLingPerfil
+    buscarResulLingPerfil,
+
+    cadastrarArtigos,
+    buscarArtigos,
+    buscarArtigoPorId
 }

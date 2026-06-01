@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Desatino, dashboard</title>
+
+    <script src="../js/sessao.js"></script>
+    <link rel="icon" href="../assets/icon/iconPrincipal.png">
+    <link rel="stylesheet" href="../css/dashboard.css" />
+</head>
+</head>
+
+<!--<body onload="listar()">-->
+    <body>
+
+        <div class="dashboard">
+          <aside class="sidebar">
+            <h1 class="logo">DESATINO</h1>
+            <nav>
+                <a href="dashboard.html">Dashboard</a>
+                <a href="../coxia.html">Coxia</a>
+                <a href="cadastrarArtigos.html">Escrever Artigos</a>
+                
+                <!--
+                <a href="#">Mapa Cênico</a>
+                <a href="#">Arquivo Vivo</a>
+                -->
+            </nav>
+        </aside>
+
+        <main class="conteudo">
+            <div class="cadastrarArtigos">
+                <div class="formulario">
+                    <h2>Escrever Artigo</h2>
+                    <div class="campo">
+                        <span>Titulo:</span><br>
+                        <input id="titulo_input" type="text" placeholder="Titulo do artigo" />
+                    </div>
+
+                    <div class="campo">
+                        <span>Conteudo:</span><br>
+                        <input id="conteudo_input" type="text" placeholder="Conteudo do artigo" />
+                    </div>
+
+                    <div class="campo">
+                        <span>Categoria:</span><br>
+                        <input id="categoria_input" type="text" placeholder="Categoria do artigo" />
+                    </div>
+                    <button onclick="cadastrar()" class="botao">Publicar</button>
+                </div>
+            </div>
+            <div class="card_erro" id="cardErro">
+              <span id="mensagem_erro"></span>
+            </div>
+        </main>
+    </div>
+
+</body>
+
+</html>
+
+<script>
+
+  // Array para armazenar empresas cadastradas para validação de código de ativação 
+  // let listaEmpresasCadastradas = [];
+
+  function cadastrar() {
+    // aguardar();
+
+    //Recupere o valor da nova input pelo nome do id
+    // Agora vá para o método fetch logo abaixo
+    var tituloVar = titulo_input.value;
+    var conteudoVar = conteudo_input.value;
+    var categoriaVar = categoria_input.value;
+
+    // Verificando se há algum campo em branco
+    if (
+      tituloVar == "" ||
+      conteudoVar == "" ||
+      categoriaVar == ""
+    ) {
+      cardErro.style.display = "block";
+      mensagem_erro.innerHTML =
+        "(Mensagem de erro para todos os campos em branco)";
+
+      finalizarAguardar();
+      return false;
+    } else {
+      setInterval(sumirMensagem, 5000);
+    }
+
+    // Verificando se o código de ativação é de alguma empresa cadastrada
+    /*for (let i = 0; i < listaEmpresasCadastradas.length; i++) {
+      if (listaEmpresasCadastradas[i].codigo_ativacao == codigoVar) {
+        idEmpresaVincular = listaEmpresasCadastradas[i].id
+        console.log("Código de ativação válido.");
+        break;
+      } else {
+        cardErro.style.display = "block";
+        mensagem_erro.innerHTML = "(Mensagem de erro para código inválido)";
+        finalizarAguardar();
+      }
+    }*/
+
+    // Enviando o valor da nova input
+    fetch("/dashboard/cadastrarArtigos", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        // crie um atributo que recebe o valor recuperado aqui
+        // Agora vá para o arquivo routes/usuario.js
+        tituloServer:   tituloVar,
+        conteudoServer: conteudoVar,
+        categoriaServer:categoriaVar
+      }),
+    })
+      .then(function (resposta) {
+        console.log("resposta: ", resposta);
+
+        if (resposta.ok) {
+          cardErro.style.display = "block";
+
+          mensagem_erro.innerHTML =
+            "Cadastro realizado com sucesso! Redirecionando para tela de Login...";
+
+        /*
+          setTimeout(() => {
+            window.location = "login.html";
+          }, "2000");*/
+
+          limparFormulario();
+          finalizarAguardar();
+        } else {
+          throw "Houve um erro ao tentar realizar o cadastro!";
+        }
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+        finalizarAguardar();
+      });
+
+    return false;
+  }
+
+  // Listando empresas cadastradas 
+  /*function listar() {
+    fetch("/empresas/listar", {
+      method: "GET",
+    })
+      .then(function (resposta) {
+        resposta.json().then((empresas) => {
+          empresas.forEach((empresa) => {
+            listaEmpresasCadastradas.push(empresa);
+
+            console.log("listaEmpresasCadastradas")
+            console.log(listaEmpresasCadastradas[0].codigo_ativacao)
+          });
+        });
+      })
+      .catch(function (resposta) {
+        console.log(`#ERRO: ${resposta}`);
+      });
+  }*/
+
+  function sumirMensagem() {
+    cardErro.style.display = "none";
+  }
+</script>

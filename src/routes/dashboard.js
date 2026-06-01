@@ -33,4 +33,18 @@ router.get("/buscarResulLingPerfil", function(req, res) {
     dashboardController.buscarResulLingPerfil(req, res);
 });
 
+
+// PRO ARTIGO
+router.post("/cadastrarArtigos", function(req, res) {
+    dashboardController.cadastrarArtigos(req, res);
+});
+
+router.get("/buscarArtigos", function(req, res) {
+    dashboardController.buscarArtigos(req, res);
+});
+
+router.get("/buscarArtigoPorId/:idArtigo", function(req, res) {
+    dashboardController.buscarArtigoPorId(req, res);
+});
+
 module.exports = router;

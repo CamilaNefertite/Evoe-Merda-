@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Desatino, Artigos</title>
+    <link rel="icon" href="./assets/icon/iconPrincipal.png">
+    <link rel="stylesheet" href="/css/artigo.css">
+    <link rel="stylesheet" href="/css/navbar.css">
+
+</head>
+<body>
+    <nav class="navbar">
+        <div class="logo">
+          <a href="coxia.html">
+            <img src="assets/icon/desatino.png" alt="">
+          </a>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Início</a></li>
+            <li><a href="quiz.html">Quiz</a></li>
+            <li><a href="#">Recomendações de peças</a></li>
+            <li><a href="#">Artigos</a></li>
+        </ul>
+    </nav>
+
+
+    <div class="wrapperArtigo">
+
+        <h1 id="tituloArtigo"></h1>
+        <img id="imgArtigo">
+        <p id="categoriaArtigo"></p>
+        <hr>
+        <div id="conteudoArtigo"></div>
+    </div>
+
+</body>
+</html>
+<script>
+    var idArtigo = sessionStorage.ID_ARTIGO;
+    fetch(`/dashboard/buscarArtigoPorId/${idArtigo}`)
+        .then(function(resposta){
+            return resposta.json();
+        })
+        .then(function(dados){
+            var artigo = dados[0];
+            tituloArtigo.innerHTML = artigo.titulo;
+            conteudoArtigo.innerHTML = artigo.conteudo;
+            categoriaArtigo.innerHTML = artigo.categoria;
+            //imgArtigo.src = artigo.imagem;
+
+        });
+
+
+
+
+
+</script>
