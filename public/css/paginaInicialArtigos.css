@@ -74,7 +74,7 @@ h1{
 
 .cardArtigo{
     width: 320px;
-    height: 370px;
+    height: 200px;
     background-color: #d9d9d9;
     color: black;
     padding-left: 20px;
@@ -89,6 +89,7 @@ h1{
     transform: scale(1.03);
 }
 
+
 .cardArtigo > img{
     width: 100%;
     height: auto;
@@ -96,9 +97,10 @@ h1{
 }
 
 
-.tituloMostraArtigo{
+.tituloArtigos{
   font-size: 25px;
   font-weight: bold;
+  padding: 20px;
 }
 .previaMostraArtigo{
   font-size: 17px;
